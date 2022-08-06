@@ -121,6 +121,23 @@ var nextQuestion = function() {
     answerFour.className = "answers";
     answerFour.textContent = questions[1].answerFour;
     question.appendChild(answerFour);
+
+    var right = function () {
+        alert("Correct, plus 10 points!");
+        score += 10;
+        console.log(score);
+        question.remove();
+        answerOne.remove();
+        answerTwo.remove();
+        answerThree.remove();
+        answerFour.remove();
+        nextQuestion();
+    }
+
+    answerOne.addEventListener("click", wrong);
+    answerTwo.addEventListener("click", right);
+    answerThree.addEventListener("click", wrong);
+    answerFour.addEventListener("click", wrong);
 }
 
 button.addEventListener("click", startGame);
