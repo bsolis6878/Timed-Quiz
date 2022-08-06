@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     margin: auto;
     background-color: #D98196;
-    width: 50%;
+    width: 70%;
     height: 500px;
     border-radius: 10px;
 }
@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-.correct-answers, .wrong-answers {
+.answers {
     border-radius: 0px;
     font-size: 20px;
     background-color: #FEFEFE;
