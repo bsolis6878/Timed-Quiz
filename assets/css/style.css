@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-.answers {
+.correct-answers, .wrong-answers {
     border-radius: 0px;
     font-size: 20px;
     background-color: #FEFEFE;

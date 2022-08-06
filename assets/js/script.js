@@ -4,6 +4,15 @@ var welcomeText = document.querySelector(".welcome-text");
 var questionBox = document.querySelector(".starting");
 
 var score = 0;
+var timeLeft = 60;
+
+var wrong = function () {
+    alert("Wrong, minus 5 seconds and minus 5 points!");
+    timeLeft -= 5;
+    score -= 5;
+    console.log(score);
+};
+
 var questions = [
     {
         question: "Which country has the highest life expectancy?",
@@ -27,7 +36,6 @@ var startGame = function() {
     button.remove();
     welcomeText.textContent = "60 seconds remaining!";
 
-    var timeLeft = 60;
     var timer = setInterval(function() {
         if (timeLeft > 1) {
             welcomeText.textContent = timeLeft + " seconds remaining!";
@@ -51,24 +59,35 @@ var startQuiz = function() {
     questionBox.appendChild(question);
 
     var answerOne = document.createElement("button")
-    answerOne.className = "answers";
+    answerOne.className = "wrong-answers";
     answerOne.textContent = questions[0].answerOne;
     question.appendChild(answerOne);
 
     var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
+    answerTwo.className = "wrong-answers";
     answerTwo.textContent = questions[0].answerTwo;
     question.appendChild(answerTwo);
 
     var answerThree = document.createElement("button")
-    answerThree.className = "answers";
+    answerThree.className = "wrong-answers";
     answerThree.textContent = questions[0].answerThree;
     question.appendChild(answerThree);
 
     var answerFour = document.createElement("button")
-    answerFour.className = "answers";
+    answerFour.className = "correct-answers";
     answerFour.textContent = questions[0].answerFour;
     question.appendChild(answerFour);
+
+    var right = function () {
+        alert("Correct, plus 10 points!");
+        score += 10;
+        console.log(score);
+    }
+    
+    answerOne.addEventListener("click", wrong);
+    answerTwo.addEventListener("click", wrong);
+    answerThree.addEventListener("click", wrong);
+    answerFour.addEventListener("click", right);
 }
 
 button.addEventListener("click", startGame);
