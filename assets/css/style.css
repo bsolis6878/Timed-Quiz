@@ -33,3 +33,15 @@ body {
     width: 100px;
     font-size: 15px;
 }
+
+.questions {
+    text-align: center;
+}
+
+.answers {
+    border-radius: 0px;
+    font-size: 20px;
+    background-color: #FEFEFE;
+    margin: 75px 20px 20px 0px;
+    padding: 10px;
+}
