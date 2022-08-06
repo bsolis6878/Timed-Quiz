@@ -2,19 +2,20 @@ body {
     background-color: #81BED9;
 }
 
-.timer {
+.welcome {
     display: flex;
-    text-align: center;
+    align-items: center;
     justify-content: center;
     margin: auto;
     margin-top: 100px;
+    margin-bottom: 50px;
     background-color: #D4D981;
-    width: 10%;
+    width: 40%;
     height: 50px;
     border-radius: 10px;
 }
 
-.body, .starting {
+.starting {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,14 +25,6 @@ body {
     width: 50%;
     height: 500px;
     border-radius: 10px;
-}
-
-.welcome {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 100px;
 }
 
 #button {
