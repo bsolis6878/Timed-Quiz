@@ -10,6 +10,9 @@ var wrong = function () {
     alert("Wrong, minus 5 seconds and minus 5 points!");
     timeLeft -= 5;
     score -= 5;
+    if (score < 0) {
+        score = 0;
+    }
     console.log(score);
 };
 
@@ -87,7 +90,25 @@ var questions = [
 ]
 
 var final = function() {
-    prompt("Thank you for taking my quiz! Enter your name below:")
+    var name = prompt("Thank you for taking my quiz! Enter your name below:")
+    var welcomeText = document.querySelector(".welcome-text");
+    welcomeText.textContent = "Congratulations! Your final score is " + score + ".";
+    var question = document.querySelector(".questions");
+    question.remove();
+
+    if (localStorage.getItem("score") > score) {
+        var finalText = document.createElement("h1");
+        finalText.textContent = "Sorry, the current high score is " + localStorage.getItem("score") + " set by " + localStorage.getItem("name") + ". Better luck next time!";
+        questionBox.appendChild(finalText);
+    } else {
+        localStorage.setItem("score", score);
+        localStorage.setItem("name", name);
+        var finalText = document.createElement("h1");
+        finalText.textContent = "You set the high score and your data has been saved, fantastic work!";
+        questionBox.appendChild(finalText);
+    }
+
+
 }
 
 var startGame = function() {
@@ -538,11 +559,6 @@ var nextQuestionNine = function() {
         alert("Correct, plus 10 points!");
         score += 10;
         console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
         final();
     };
 
