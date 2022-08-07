@@ -98,17 +98,17 @@ var final = function() {
 
     if (localStorage.getItem("score") > score) {
         var finalText = document.createElement("h1");
+        finalText.className = "starting-text";
         finalText.textContent = "Sorry, the current high score is " + localStorage.getItem("score") + " set by " + localStorage.getItem("name") + ". Better luck next time!";
         questionBox.appendChild(finalText);
     } else {
         localStorage.setItem("score", score);
         localStorage.setItem("name", name);
         var finalText = document.createElement("h1");
+        finalText.className = "welcome-text";
         finalText.textContent = "You set the high score and your data has been saved, fantastic work!";
         questionBox.appendChild(finalText);
     }
-
-
 }
 
 var startGame = function() {
