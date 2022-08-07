@@ -92,7 +92,7 @@ var questions = [
 var final = function() {
     var name = prompt("Thank you for taking my quiz! Enter your name below:")
     var welcomeText = document.querySelector(".welcome-text");
-    welcomeText.textContent = "Congratulations! Your final score is " + score + ".";
+    welcomeText.textContent = "Quiz over! Your final score is " + score + ".";
     var question = document.querySelector(".questions");
     question.remove();
 
@@ -130,442 +130,444 @@ var startGame = function() {
         }
     }, 1000);
 
+    var startQuiz = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[0].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[0].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[0].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[0].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[0].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestion();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", right);
+    }
+    
+    var nextQuestion = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[1].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[1].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[1].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[1].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[1].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionTwo();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", right);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionTwo = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[2].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[2].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[2].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[2].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[2].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionThree();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", right);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionThree = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[3].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[3].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[3].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[3].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[3].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionFour();
+        }
+    
+        answerOne.addEventListener("click", right);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionFour = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[4].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[4].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[4].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[4].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[4].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionFive();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", right);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionFive = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[5].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[5].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[5].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[5].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[5].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionSix();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", right);
+    }
+    
+    var nextQuestionSix = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[6].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[6].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[6].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[6].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[6].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionSeven();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", right);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionSeven = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[7].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[7].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[7].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[7].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[7].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionEight();
+        }
+    
+        answerOne.addEventListener("click", right);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionEight = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[8].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[8].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[8].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[8].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[8].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            question.remove();
+            answerOne.remove();
+            answerTwo.remove();
+            answerThree.remove();
+            answerFour.remove();
+            nextQuestionNine();
+        }
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", right);
+        answerFour.addEventListener("click", wrong);
+    }
+    
+    var nextQuestionNine = function() {
+        var question = document.createElement("h1");
+        question.className = "questions";
+        question.innerHTML = questions[9].question + "<br />";
+        questionBox.appendChild(question);
+    
+        var answerOne = document.createElement("button")
+        answerOne.className = "answers";
+        answerOne.textContent = questions[9].answerOne;
+        question.appendChild(answerOne);
+    
+        var answerTwo = document.createElement("button")
+        answerTwo.className = "answers";
+        answerTwo.textContent = questions[9].answerTwo;
+        question.appendChild(answerTwo);
+    
+        var answerThree = document.createElement("button")
+        answerThree.className = "answers";
+        answerThree.textContent = questions[9].answerThree;
+        question.appendChild(answerThree);
+    
+        var answerFour = document.createElement("button")
+        answerFour.className = "answers";
+        answerFour.textContent = questions[9].answerFour;
+        question.appendChild(answerFour);
+    
+        var right = function () {
+            alert("Correct, plus 10 points!");
+            score += 10;
+            console.log(score);
+            clearInterval(timer);
+            final();
+        };
+    
+        answerOne.addEventListener("click", wrong);
+        answerTwo.addEventListener("click", wrong);
+        answerThree.addEventListener("click", wrong);
+        answerFour.addEventListener("click", right);
+    }
     startQuiz();
 }
 
-var startQuiz = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[0].question + "<br />";
-    questionBox.appendChild(question);
 
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[0].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[0].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[0].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[0].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestion();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", right);
-}
-
-var nextQuestion = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[1].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[1].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[1].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[1].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[1].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionTwo();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", right);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionTwo = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[2].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[2].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[2].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[2].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[2].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionThree();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", right);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionThree = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[3].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[3].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[3].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[3].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[3].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionFour();
-    }
-
-    answerOne.addEventListener("click", right);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionFour = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[4].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[4].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[4].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[4].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[4].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionFive();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", right);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionFive = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[5].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[5].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[5].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[5].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[5].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionSix();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", right);
-}
-
-var nextQuestionSix = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[6].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[6].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[6].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[6].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[6].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionSeven();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", right);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionSeven = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[7].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[7].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[7].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[7].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[7].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionEight();
-    }
-
-    answerOne.addEventListener("click", right);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionEight = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[8].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[8].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[8].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[8].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[8].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        question.remove();
-        answerOne.remove();
-        answerTwo.remove();
-        answerThree.remove();
-        answerFour.remove();
-        nextQuestionNine();
-    }
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", right);
-    answerFour.addEventListener("click", wrong);
-}
-
-var nextQuestionNine = function() {
-    var question = document.createElement("h1");
-    question.className = "questions";
-    question.innerHTML = questions[9].question + "<br />";
-    questionBox.appendChild(question);
-
-    var answerOne = document.createElement("button")
-    answerOne.className = "answers";
-    answerOne.textContent = questions[9].answerOne;
-    question.appendChild(answerOne);
-
-    var answerTwo = document.createElement("button")
-    answerTwo.className = "answers";
-    answerTwo.textContent = questions[9].answerTwo;
-    question.appendChild(answerTwo);
-
-    var answerThree = document.createElement("button")
-    answerThree.className = "answers";
-    answerThree.textContent = questions[9].answerThree;
-    question.appendChild(answerThree);
-
-    var answerFour = document.createElement("button")
-    answerFour.className = "answers";
-    answerFour.textContent = questions[9].answerFour;
-    question.appendChild(answerFour);
-
-    var right = function () {
-        alert("Correct, plus 10 points!");
-        score += 10;
-        console.log(score);
-        final();
-    };
-
-    answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", right);
-}
 
 button.addEventListener("click", startGame);
