@@ -52,9 +52,9 @@ var questions = [
     {
         question: "Who has won the most total Academy Awards?",
         answerOne: "Lady Gaga",
-        answerTwo: "Walt Disney",
+        answerTwo: "Will Smith",
         answerThree: "Brad Pitt",
-        answerFour: "Will Smith"
+        answerFour: "Walt Disney"
     },
     {
         question: "What artist has the most streams on Spotify?",
@@ -72,10 +72,17 @@ var questions = [
     },
     {
         question: "What car manufacturer had the highest revenue in 2020?",
-        answerOne: "Volkswagen",
+        answerOne: "Ford",
         answerTwo: "Nissan",
-        answerThree: "Ford",
+        answerThree: "Volkswagen",
         answerFour: "Tesla"
+    },
+    {
+        question: "How many elements are in the periodic table?",
+        answerOne: "108",
+        answerTwo: "112",
+        answerThree: "124",
+        answerFour: "118"
     }
 ]
 
@@ -364,9 +371,9 @@ var nextQuestionFive = function() {
     }
 
     answerOne.addEventListener("click", wrong);
-    answerTwo.addEventListener("click", right);
+    answerTwo.addEventListener("click", wrong);
     answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
+    answerFour.addEventListener("click", right);
 }
 
 var nextQuestionSix = function() {
@@ -495,9 +502,9 @@ var nextQuestionEight = function() {
         nextQuestionNine();
     }
 
-    answerOne.addEventListener("click", right);
+    answerOne.addEventListener("click", wrong);
     answerTwo.addEventListener("click", wrong);
-    answerThree.addEventListener("click", wrong);
+    answerThree.addEventListener("click", right);
     answerFour.addEventListener("click", wrong);
 }
 
@@ -537,12 +544,12 @@ var nextQuestionNine = function() {
         answerThree.remove();
         answerFour.remove();
         final();
-    }
+    };
 
-    answerOne.addEventListener("click", right);
+    answerOne.addEventListener("click", wrong);
     answerTwo.addEventListener("click", wrong);
     answerThree.addEventListener("click", wrong);
-    answerFour.addEventListener("click", wrong);
+    answerFour.addEventListener("click", right);
 }
 
 button.addEventListener("click", startGame);
